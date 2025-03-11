@@ -1,5 +1,14 @@
 import { renderHook, act } from '@testing-library/react';
 import { useTodoForm } from './use-todo-form';
+import { vi } from 'vitest';
+
+beforeEach(() => {
+  vi.setSystemTime(new Date('2025-03-01T12:00:00Z'));
+});
+
+afterEach(() => {
+  vi.useRealTimers();
+});
 
 describe('useTodoForm', () => {
   it('초기 상태는 빈 문자열이어야 한다', () => {

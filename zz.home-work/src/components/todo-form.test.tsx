@@ -1,6 +1,13 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { TodoForm } from './todo-form';
 import { describe, it, expect, vi } from 'vitest';
+beforeEach(() => {
+  vi.setSystemTime(new Date('2025-03-01T12:00:00Z'));
+});
+
+afterEach(() => {
+  vi.useRealTimers();
+});
 
 describe('TodoForm', () => {
   it('입력 필드와 버튼이 정상적으로 렌더링 되는지 확인한다.', () => {
