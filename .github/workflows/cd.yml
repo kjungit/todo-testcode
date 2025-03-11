@@ -1,4 +1,4 @@
-name: Vercel Production Deployment
+name: kjungit-cd
 
 env:
   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
